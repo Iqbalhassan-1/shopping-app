@@ -1,46 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import Card from "../Card/Card";
 import "./FeaturedProducts.scss";
+import axios from "axios";
 const FeaturedProducts = ({ type }) => {
-  const data = [
-    {
-      id: 1,
-      img: "https://images.pexels.com/photos/324028/pexels-photo-324028.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      img2: "",
-      title: "Long T-shirt",
-      isNew: true,
-      oldPrice: 19,
-      price: 12,
-    },
-    {
-      id: 2,
-      img: "https://images.pexels.com/photos/5432532/pexels-photo-5432532.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      img2: "https://images.pexels.com/photos/6311314/pexels-photo-6311314.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      title: "Coat",
-      isNew: true,
-      oldPrice: 19,
-      price: 12,
-    },
-    {
-      id: 3,
-      img: "https://images.pexels.com/photos/1311590/pexels-photo-1311590.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      img2: "https://images.pexels.com/photos/1566412/pexels-photo-1566412.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      title: "Short T-shirt",
-      isNew: false,
-      oldPrice: 19,
-      price: 12,
-    },
-    {
-      id: 4,
-      img: "https://images.pexels.com/photos/6311506/pexels-photo-6311506.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      img2: "https://images.pexels.com/photos/6311551/pexels-photo-6311551.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      title: "Long T-shirt",
-      isNew: true,
-      oldPrice: 19,
-      price: 12,
-    },
-  ];
 
+  const [data, SetData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(
+          // here all data call and also filter featured and trending products with help of strapi query 
+          process.env.REACT_APP_API_URL + `/products?populate=*&[filters][type][$eq]=${type}`,
+          {
+            headers: {
+              Authorization: "bearer " + process.env.REACT_APP_API_TOKEN,
+            },
+          }
+        );
+        SetData(res.data.data)
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchData();
+  }, []);
   return (
     <div className="FeaturedProducts">
       <div className="top">
