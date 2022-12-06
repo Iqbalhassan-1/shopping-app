@@ -1,31 +1,14 @@
+import axios from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
+import useFetch from "../../hooks/useFetch";
 import Card from "../Card/Card";
 import "./FeaturedProducts.scss";
-import axios from "axios";
 const FeaturedProducts = ({ type }) => {
+  const { data, loading, error } = useFetch(
+    `/products?populate=*&[filters][type][$eq]=${type}`
+  );
 
-  const [data, SetData] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await axios.get(
-          // here all data call and also filter featured and trending products with help of strapi query 
-          process.env.REACT_APP_API_URL + `/products?populate=*&[filters][type][$eq]=${type}`,
-          {
-            headers: {
-              Authorization: "bearer " + process.env.REACT_APP_API_TOKEN,
-            },
-          }
-        );
-        SetData(res.data.data)
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    fetchData();
-  }, []);
   return (
     <div className="FeaturedProducts">
       <div className="top">
@@ -38,9 +21,11 @@ const FeaturedProducts = ({ type }) => {
         </p>
       </div>
       <div className="bottom">
-        {data.map((item) => (
-          <Card item={item} key={item.id} />
-        ))}
+        {error
+          ? "something worng !"
+          : loading
+          ? "loading"
+          : data?.map((item) => <Card item={item} key={item.id} />)}
       </div>
     </div>
   );
