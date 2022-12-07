@@ -17,11 +17,11 @@ const Navbar = () => {
       <div className="wrapper">
         <div className="left">
           <div className="item">
-            <img src="/img/en.png" alt="" />
+            <img src="/img/flag.png" alt="" />
             <KeyboardArrowDownIcon />
           </div>
           <div className="item">
-            <span>USD</span>
+            <span>Pak</span>
             <KeyboardArrowDownIcon />
           </div>
           <div className="item">
@@ -35,7 +35,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="center">
-          <Link className='link' to="/">REACT_STORE</Link>
+          <Link className='link' to="/">Shopping-App</Link>
         </div>
         <div className="right">
           <div className="item">
