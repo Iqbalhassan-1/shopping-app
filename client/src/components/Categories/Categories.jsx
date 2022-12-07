@@ -7,7 +7,7 @@ const Categories = () => {
     <div className="categories">
       <div className="col">
         <div className="row">
-            <img src="https://images.pexels.com/photos/6311136/pexels-photo-6311136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/>
+            <img src="https://images.pexels.com/photos/818992/pexels-photo-818992.jpeg?auto=compress&cs=tinysrgb&w=1600"/>
             <button>
                 <Link className="link" to="/products/1">
                     Sale
@@ -15,20 +15,20 @@ const Categories = () => {
             </button>
         </div>
         <div className="row">
-            <img src="https://images.pexels.com/photos/6311136/pexels-photo-6311136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/>
+            <img src="https://images.pexels.com/photos/2036646/pexels-photo-2036646.jpeg?auto=compress&cs=tinysrgb&w=1600"/>
             <button>
-                <Link className="link" to="/products/1">
-                    Sale
+                <Link className="link" to="/products/2">
+                    Women
                 </Link>
             </button>
         </div>
       </div>
       <div className="col">
       <div className="row">
-            <img src="https://images.pexels.com/photos/6311136/pexels-photo-6311136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/>
+            <img src="https://images.pexels.com/photos/1813947/pexels-photo-1813947.jpeg?auto=compress&cs=tinysrgb&w=1600"/>
             <button>
                 <Link className="link" to="/products/1">
-                    Sale
+                    New Season
                 </Link>
             </button>
         </div>
@@ -37,30 +37,30 @@ const Categories = () => {
         <div className="row">
           <div className="col">
           <div className="row">
-            <img src="https://images.pexels.com/photos/6311136/pexels-photo-6311136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/>
+            <img src="https://images.pexels.com/photos/1192609/pexels-photo-1192609.jpeg?auto=compress&cs=tinysrgb&w=1600"/>
             <button>
                 <Link className="link" to="/products/1">
-                    Sale
+                Men
                 </Link>
             </button>
         </div>
           </div>
           <div className="col">
           <div className="row">
-            <img src="https://images.pexels.com/photos/6311136/pexels-photo-6311136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/>
+            <img src="https://images.pexels.com/photos/2703202/pexels-photo-2703202.jpeg?auto=compress&cs=tinysrgb&w=1600"/>
             <button>
                 <Link className="link" to="/products/1">
-                    Sale
+                Accessories
                 </Link>
             </button>
         </div>
           </div>
         </div>
          <div className="row">
-            <img src="https://images.pexels.com/photos/6311136/pexels-photo-6311136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/>
+            <img src="https://images.pexels.com/photos/1159670/pexels-photo-1159670.jpeg?auto=compress&cs=tinysrgb&w=1600"/>
             <button>
                 <Link className="link" to="/products/1">
-                    Sale
+                Shoes
                 </Link>
             </button>
         </div>
